@@ -1,0 +1,23 @@
+.header {
+
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 60px;
+
+    text-align: center;
+
+    &__logo {
+        width: 100px;
+    }
+
+    span {
+        display: block;
+
+        color: #231f20;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+}

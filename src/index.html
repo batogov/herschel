@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- build:css css/vendor.min.css -->
+    <link rel="stylesheet" href="lib/normalize.css/normalize.css">
+    <!-- endbuild -->
+
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+    <title>Herschel</title>
+</head>
+<body>
+
+    <header class="header">
+        <img src="img/logo.svg" alt="" class="header__logo">
+        <span>catalogue</span>
+    </header>
+
+    <div class="container">
+
+        <div class="filters">
+
+            <div class="filters__block">
+                <span class="filters__filter-name">Category</span>
+                <a class="filters__radio-btn filters__radio-btn--active" href="">All</a>
+                <a class="filters__radio-btn" href="">Backpacks</a>
+                <a class="filters__radio-btn" href="">Wallets</a>
+            </div>
+
+            <div class="filters__block">
+                <span class="filters__filter-name">Color</span>
+                <a class="filters__btn filters__btn--active" href="">Black</a>
+                <a class="filters__btn" href="">Navy</a>
+                <a class="filters__btn" href="">Print</a>
+            </div>
+
+            <div class="filters__block">
+                <span class="filters__filter-name">Price</span>
+                <a class="filters__radio-btn filters__radio-btn--active" href="">$30 to $50</a>
+                <a class="filters__radio-btn" href="">$50 to $75</a>
+                <a class="filters__radio-btn" href="">$75 to $100</a>
+                <a class="filters__radio-btn" href="">Over $100</a>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="content__items">
+            </div>
+
+        </div>
+
+    </div>
+
+    <template id="item-template">
+        <div class="content-item__img-block">
+            <img src="img/{{ img }}" class="content-item__backpack-close" alt="">
+            <img src="img/{{ img-open }}" class="content-item__backpack-open" alt="">
+        </div>
+
+        <div class="content-item__about-block">
+            <span class="content-item__color">{{ color }}</span>
+            <span class="content-item__name">{{ name }}</span>
+            <span class="content-item__price">${{ price }}</span>
+        </div>
+    </template>
+
+    <script src="lib/mustache/mustache.min.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
