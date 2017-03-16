@@ -2,7 +2,7 @@
   {
     "name": "Settlement Backpack",
     "price": "59.99",
-    "color": "Navy",
+    "color": "navy",
     "category": "backpacks",
     "img": "settlement-backpack-navy.jpg",
     "img-open": "settlement-backpack-navy-open.jpg"
@@ -11,7 +11,7 @@
   {
     "name": "Settlement Backpack",
     "price": "59.99",
-    "color": "Black",
+    "color": "black",
     "category": "backpacks",
     "img": "settlement-backpack-black.jpg",
     "img-open": "settlement-backpack-black-open.jpg"
@@ -20,7 +20,7 @@
   {
     "name": "Pop Quiz",
     "price": "74.99",
-    "color": "Peacoat Floria",
+    "color": "peacoat floria",
     "category": "backpacks",
     "img": "pop-quiz-floria.jpg",
     "img-open": "pop-quiz-floria-open.jpg"
@@ -29,9 +29,27 @@
   {
     "name": "Little America",
     "price": "99.99",
-    "color": "Black",
+    "color": "black",
     "category": "backpacks",
     "img": "little-america-black.jpg",
     "img-open": "little-america-black-open.jpg"
+  },
+
+  {
+    "name": "Charlie Wallet",
+    "price": "19.99",
+    "color": "black",
+    "category": "wallets",
+    "img": "charlie-wallet-black.jpg",
+    "img-open": "charlie-wallet-black-back.jpg"
+  },
+
+  {
+    "name": "Hank Wallet",
+    "price": "39.99",
+    "color": "navy",
+    "category": "wallets",
+    "img": "hank-wallet-navy.jpg",
+    "img-open": "hank-wallet-navy-open.jpg"
   }
 ]

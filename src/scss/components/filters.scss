@@ -6,6 +6,8 @@
 
     &__block {
         margin-bottom: 30px;
+
+        border: none;
     }
 
     &__filter-name {
@@ -17,7 +19,11 @@
         font-weight: 700;
     }
 
-    &__btn, &__radio-btn {
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"] + label {
         position: relative;
 
         display: block;
@@ -38,39 +44,27 @@
             height: 9px;
 
             border: 1px solid #231f20;
+            border-radius: 50%;
 
             content: "";
         }
-
-        &--active {
-            &::after {
-                display: block;
-                position: absolute;
-                top: 5px;
-                left: 3px;
-
-                width: 5px;
-                height: 5px;
-
-                background-color: #231f20;
-
-                content: "";
-            }
-        }
     }
 
-    &__radio-btn {
+    input[type="radio"]:checked + label {
+        &::after {
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 3px;
 
-        &::before {
+            width: 5px;
+            height: 5px;
+
+            background-color: #231f20;
             border-radius: 50%;
-        }
 
-        &--active {
-            &::after {
-                border-radius: 50%;
-            }
+            content: "";
         }
-
     }
 
 }
