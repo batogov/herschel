@@ -2,62 +2,103 @@
 
 (function() {
 
-    var items;
+
+    var items = [];
+    var filteredItems = [];
 
     var itemsContainer = document.querySelector(".content__items");
 
-    var activeCategoryFilter = 'category-all';
     var filters = document.querySelectorAll("input[type=radio]");
+
+    var moreBtn = document.querySelector(".content__more-btn");
+    var noMoreItemsSpan = document.querySelector(".content__no-more-items");
+
+    var currentPage = 0;
+    var PAGE_SIZE = 4;
 
 
     for (var i = 0; i < filters.length; i++) {
-        filters[i].onclick = function (event) {
-
-            var filteredItems = items.slice(0);
-
-            var categoryValue = document.querySelector("input[name=category]:checked").value;
-            var colorValue = document.querySelector("input[name=color]:checked").value;
-            var priceValue = document.querySelector("input[name=price]:checked").value;
-
-            filteredItems = filteredItems.filter(function (item, i, arr) {
-
-                var categoryFlag = item.category === categoryValue || categoryValue === 'all';
-                var colorFlag = item.color === colorValue || colorValue === 'all';
-                var priceFlag;
-
-                if (priceValue === 'all') {
-                    priceFlag = true;
-                } else {
-                    if (priceValue === '100+') {
-                        priceFlag = parseInt(item.price) >= 100;
-                    } else {
-                        var priceMinMax = priceValue.split("-");
-                        priceFlag = parseInt(item.price) >= parseInt(priceMinMax[0]) && parseInt(item.price) <= parseInt(priceMinMax[1]);
-                    }
-                }
-
-                return categoryFlag && colorFlag && priceFlag;
-            });
-
-            renderItems(filteredItems);
-
-        }
+        filters[i].addEventListener("click", applyFilters);
     }
 
     
     getItems();
 
 
-    function renderItems (items) {
-        itemsContainer.innerHTML = "";
+    function renderItems (items, pageNumber, replace) {
+        if (replace) {
+            itemsContainer.innerHTML = "";
+        }
+
         var fragment = document.createDocumentFragment();
 
-        items.forEach(function (item) {
+        var from = pageNumber * PAGE_SIZE;
+        var to = from + PAGE_SIZE;
+        var pageItems = items.slice(from, to);
+
+        console.log("From: " + from);
+        console.log("To: " + to);
+        console.log(items.length);
+
+        if (items.length === 0) {
+
+            noMoreItemsSpan.classList.remove("content__no-more-items--hidden");
+            noMoreItemsSpan.innerHTML = "No items to show :(";
+            moreBtn.classList.add("content__more-btn--hidden");
+
+        } else if (to >= items.length) {
+
+            noMoreItemsSpan.classList.remove("content__no-more-items--hidden");
+            noMoreItemsSpan.innerHTML = "No more items to show :(";
+            moreBtn.classList.add("content__more-btn--hidden");
+
+        } else if (to < items.length) {
+
+            noMoreItemsSpan.classList.add("content__no-more-items--hidden");
+            moreBtn.classList.remove("content__more-btn--hidden");
+
+        }
+
+        pageItems.forEach(function (item) {
             var element = getElementFromTemplate(item);
             fragment.appendChild(element);
         });
 
         itemsContainer.appendChild(fragment);
+    }
+
+
+    function applyFilters(event) {
+
+        filteredItems = items.slice(0);
+
+        var categoryValue = document.querySelector("input[name=category]:checked").value;
+        var colorValue = document.querySelector("input[name=color]:checked").value;
+        var priceValue = document.querySelector("input[name=price]:checked").value;
+
+        filteredItems = filteredItems.filter(function (item, i, arr) {
+
+            var categoryFlag = item.category === categoryValue || categoryValue === 'all';
+            var colorFlag = item.color === colorValue || colorValue === 'all';
+            var priceFlag;
+
+            if (priceValue === 'all') {
+                priceFlag = true;
+            } else {
+                if (priceValue === '100+') {
+                    priceFlag = parseInt(item.price) >= 100;
+                } else {
+                    var priceMinMax = priceValue.split("-");
+                    priceFlag = parseInt(item.price) >= parseInt(priceMinMax[0]) && parseInt(item.price) <= parseInt(priceMinMax[1]);
+                }
+            }
+
+            return categoryFlag && colorFlag && priceFlag;
+        });
+
+        currentPage = 0;
+        renderItems(filteredItems, currentPage, true);
+
     }
 
     
@@ -68,9 +109,11 @@
         xhr.onload = function (event) {
             var rawData = event.target.response;
             var loadedItems = JSON.parse(rawData);
-            items = loadedItems;
 
-            renderItems(loadedItems);
+            items = loadedItems;
+            filteredItems = loadedItems;
+
+            renderItems(items, 0, true);
         };
 
         xhr.send();
@@ -83,8 +126,13 @@
 
         element.innerHTML = Mustache.render(document.querySelector("#item-template").innerHTML, data);
 
-        return element
+        return element;
     }
+
+    
+    moreBtn.addEventListener("click", function(event) {
+        renderItems(filteredItems, ++currentPage, false);
+    });
 
 
 })();

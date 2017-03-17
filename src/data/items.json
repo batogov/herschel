@@ -51,5 +51,33 @@
     "category": "wallets",
     "img": "hank-wallet-navy.jpg",
     "img-open": "hank-wallet-navy-open.jpg"
+  },
+
+  {
+    "name": "Daypack",
+    "price": "39.99",
+    "color": "grey",
+    "category": "backpacks",
+    "img": "daypack-grey.jpg",
+    "img-open": "daypack-grey-open.jpg"
+  },
+
+  {
+    "name": "Foster Cap",
+    "price": "34.99",
+    "color": "grey",
+    "category": "headwear",
+    "img": "foster-cap-grey.jpg",
+    "img-open": "foster-cap-grey-back.jpg"
+  },
+
+  {
+    "name": "Heritage Backpack",
+    "price": "59.99",
+    "color": "grey",
+    "category": "backpacks",
+    "img": "heritage-backpack-grey.jpg",
+    "img-open": "heritage-backpack-grey-open.jpg"
   }
+
 ]

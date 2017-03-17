@@ -1,8 +1,21 @@
 .container {
-    width: 940px;
-    margin: 0 auto;
 
-    &::after {
-        @include clearfix();
+    &__wrapper {
+        width: 860px;
+        margin: 0 auto;
+        padding: 0 10px 60px 10px;
+
+        &::after {
+            @include clearfix();
+        }
+    }
+
+    @media (max-width: 860px) {
+        &__wrapper {
+            width: 100%;
+
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 }

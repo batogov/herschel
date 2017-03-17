@@ -1,11 +1,12 @@
 .header {
 
-    width: 940px;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 60px;
+    &__wrapper {
+        width: 860px;
+        margin: 0 auto;
+        padding: 30px 10px 60px 10px;
 
-    text-align: center;
+        text-align: center;
+    }
 
     &__logo {
         width: 100px;
@@ -18,6 +19,12 @@
         font-size: 24px;
         text-transform: uppercase;
         font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+        &__wrapper {
+            width: 100%;
+        }
     }
 
 }

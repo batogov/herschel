@@ -21,70 +21,79 @@
 <body>
 
     <header class="header">
-        <img src="img/logo.svg" alt="" class="header__logo">
-        <span>Catalogue</span>
+        <div class="header__wrapper">
+            <img src="img/logo.svg" alt="" class="header__logo">
+            <span>Catalogue</span>
+        </div>
     </header>
 
     <div class="container">
 
-        <div class="filters">
+        <div class="container__wrapper">
 
-            <form>
+            <div class="filters">
 
-                <fieldset class="filters__block" id="category-block">
-                    <legend class="filters__filter-name">Category</legend>
+                <form>
 
-                    <input type="radio" name="category" value="all" id="category-all" checked>
-                    <label for="category-all">All</label>
+                    <fieldset class="filters__block" id="category-block">
+                        <legend class="filters__filter-name">Category</legend>
 
-                    <input type="radio" name="category" value="backpacks" id="category-backpacks">
-                    <label for="category-backpacks">Backpacks</label>
+                        <input type="radio" name="category" value="all" id="category-all" checked>
+                        <label for="category-all">All</label>
 
-                    <input type="radio" name="category" value="wallets" id="category-wallets">
-                    <label for="category-wallets">Wallets</label>
-                </fieldset>
+                        <input type="radio" name="category" value="backpacks" id="category-backpacks">
+                        <label for="category-backpacks">Backpacks</label>
 
-                <fieldset class="filters__block" id="color-block">
-                    <legend class="filters__filter-name">Color</legend>
+                        <input type="radio" name="category" value="wallets" id="category-wallets">
+                        <label for="category-wallets">Wallets</label>
+                    </fieldset>
 
-                    <input type="radio" name="color" value="all" id="color-all" checked>
-                    <label for="color-all">All</label>
+                    <fieldset class="filters__block" id="color-block">
+                        <legend class="filters__filter-name">Color</legend>
 
-                    <input type="radio" name="color" value="black" id="color-black">
-                    <label for="color-black">Black</label>
+                        <input type="radio" name="color" value="all" id="color-all" checked>
+                        <label for="color-all">All</label>
 
-                    <input type="radio" name="color" value="navy" id="color-navy">
-                    <label for="color-navy">Navy</label>
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black">Black</label>
 
-                    <input type="radio" name="color" value="print" id="color-print">
-                    <label for="color-print">Print</label>
-                </fieldset>
+                        <input type="radio" name="color" value="navy" id="color-navy">
+                        <label for="color-navy">Navy</label>
 
-                <fieldset class="filters__block" id="price-block">
-                    <legend class="filters__filter-name">Price</legend>
+                        <input type="radio" name="color" value="print" id="color-print">
+                        <label for="color-print">Print</label>
+                    </fieldset>
 
-                    <input type="radio" name="price" value="all" id="price-all" checked>
-                    <label for="price-all">All</label>
+                    <fieldset class="filters__block" id="price-block">
+                        <legend class="filters__filter-name">Price</legend>
 
-                    <input type="radio" name="price" value="30-50" id="price-30-to-50">
-                    <label for="price-30-to-50">$30 to $50</label>
+                        <input type="radio" name="price" value="all" id="price-all" checked>
+                        <label for="price-all">All</label>
 
-                    <input type="radio" name="price" value="50-75" id="price-50-to-75">
-                    <label for="price-50-to-75">$50 to $75</label>
+                        <input type="radio" name="price" value="30-50" id="price-30-to-50">
+                        <label for="price-30-to-50">$30 to $50</label>
 
-                    <input type="radio" name="price" value="75-100" id="price-75-to-100">
-                    <label for="price-75-to-100">$75 to $100</label>
+                        <input type="radio" name="price" value="50-75" id="price-50-to-75">
+                        <label for="price-50-to-75">$50 to $75</label>
 
-                    <input type="radio" name="price" value="100+" id="price-over-100">
-                    <label for="price-over-100">Over $100</label>
-                </fieldset>
+                        <input type="radio" name="price" value="75-100" id="price-75-to-100">
+                        <label for="price-75-to-100">$75 to $100</label>
 
-            </form>
-        </div>
+                        <input type="radio" name="price" value="100+" id="price-over-100">
+                        <label for="price-over-100">Over $100</label>
+                    </fieldset>
 
-        <div class="content">
+                </form>
+            </div>
 
-            <div class="content__items">
+            <div class="content">
+
+                <div class="content__items">
+                </div>
+
+                <a class="content__more-btn">More</a>
+                <span class="content__no-more-items content__no-more-items--hidden"></span>
+
             </div>
 
         </div>
