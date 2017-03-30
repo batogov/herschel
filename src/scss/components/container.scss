@@ -13,9 +13,14 @@
     @media (max-width: 860px) {
         &__wrapper {
             width: 100%;
-
             padding-left: 20px;
             padding-right: 20px;
+        }
+    }
+
+    @media (max-width: 260px) {
+        & {
+            width: 260px;
         }
     }
 }

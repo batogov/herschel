@@ -3,7 +3,7 @@
     margin-bottom: 20px;
     width: 300px;
 
-    font-size: 14px;
+    vertical-align: top;
 
     background-color: #fff;
 
@@ -14,16 +14,12 @@
     }
 
     img {
-        position: absolute;
-
         width: 100%;
     }
 
     &__img-block {
-        position: relative;
-
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     &__backpack-open {
@@ -44,6 +40,8 @@
 
     &__about-block {
         padding: 20px;
+
+        font-size: 14px;
 
         border-top: 1px solid #f1f1f1;
     }
@@ -83,7 +81,24 @@
         &:nth-of-type(odd) {
             margin-right: 4%;
         }
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        &:hover &__backpack-open {
+            display: none;
+        }
+
+        &:hover &__backpack-close {
+            display: block;
+        }
     }
 
+    @media (max-width: 540px) {
+        & {
+            width: 100%;
+        }
+    }
 
 }

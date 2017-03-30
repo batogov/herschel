@@ -16,6 +16,9 @@
     var currentPage = 0;
     var PAGE_SIZE = 4;
 
+    var collapsePanel = document.querySelector(".filters__collapse-panel");
+    var form = document.querySelector(".filters__form");
+
 
     for (var i = 0; i < filters.length; i++) {
         filters[i].addEventListener("click", applyFilters);
@@ -35,10 +38,6 @@
         var from = pageNumber * PAGE_SIZE;
         var to = from + PAGE_SIZE;
         var pageItems = items.slice(from, to);
-
-        console.log("From: " + from);
-        console.log("To: " + to);
-        console.log(items.length);
 
         if (items.length === 0) {
 
@@ -98,7 +97,6 @@
 
         currentPage = 0;
         renderItems(filteredItems, currentPage, true);
-
     }
 
     
@@ -129,9 +127,15 @@
         return element;
     }
 
-    
+
     moreBtn.addEventListener("click", function(event) {
         renderItems(filteredItems, ++currentPage, false);
+    });
+
+
+    collapsePanel.addEventListener("click", function(event) {
+        collapsePanel.classList.toggle("filters__collapse-panel--open");
+        form.classList.toggle("filters__form--hidden");
     });
 
 

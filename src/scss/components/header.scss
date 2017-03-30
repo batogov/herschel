@@ -9,7 +9,7 @@
     }
 
     &__logo {
-        width: 100px;
+        width: 150px;
     }
 
     span {
@@ -22,8 +22,28 @@
     }
 
     @media (max-width: 860px) {
+        &__logo {
+            width: 100px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
         &__wrapper {
             width: 100%;
+        }
+    }
+
+    @media (max-width: 540px) {
+        &__wrapper {
+            padding-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 260px) {
+        &__wrapper {
+            width: 260px;
         }
     }
 
