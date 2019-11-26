@@ -1,13 +1,17 @@
-# Каталог рюкзаков и аксессуаров Herschel
+# Catalog of backpacks and accessories by Herschel
 
-* Адаптивный макет;
-* Фильтры работают на JS без перезагрузки страницы;
-* Информация загружается из JSON файла.
+## Info
 
-Десктоп
+* Responsive layout
+* Filters work with JS without reloading the page
+* The data loads from a JSON file
 
-![Десктоп](https://github.com/batogov/herschel/blob/master/screenshots/screenshot-1.jpg "Десктоп")
+## Screenshots
 
-Мобилка
+### Desktop view
 
-![Мобилка](https://github.com/batogov/herschel/blob/master/screenshots/screenshot-2.png "Мобилка")
+![Desktop](https://github.com/batogov/herschel/blob/master/screenshots/screenshot-1.jpg "Desktop")
+
+### Mobile view
+
+![Mobile](https://github.com/batogov/herschel/blob/master/screenshots/screenshot-2.png "Mobile")
